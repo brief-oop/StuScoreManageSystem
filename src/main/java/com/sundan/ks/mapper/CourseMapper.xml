@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sundan.ks.mapper.CourseMapper">
+
+    <resultMap id="courseResultMap" type="com.sundan.ks.bean.Course">
+        <id column="id" property="id"></id>
+        <result column="math" property="math"></result>
+        <result column="english" property="english"></result>
+        <result column="computer" property="computer"></result>
+    </resultMap>
+
+    <select id="getListCourse" resultMap="courseResultMap">
+        SELECT * FROM course WHERE id in (SELECT id FROM `user` WHERE class_=#{class_})
+    </select>
+
+    <select id="getCourse" resultMap="courseResultMap">
+        SELECT * FROM course WHERE id=#{id}
+    </select>
+
+    <select id="getAdCourse" resultMap="courseResultMap">
+        SELECT * FROM course
+    </select>
+
+    <insert id="saveCourse">
+        INSERT INTO course(id,name,math,english,computer) VALUES(#{id},#{name},#{math},#{english},#{computer})
+    </insert>
+
+    <delete id="deleteCourse">
+        DELETE FROM course WHERE id=#{id}
+    </delete>
+
+    <update id="editCourse">
+        UPDATE course SET id=#{course.id},name=#{course.name},math=#{course.math},english=#{course.english},computer=#{course.computer} WHERE id=#{id_};
+        UPDATE user SET id=#{course.id} WHERE id=#{id_};
+        UPDATE information SET id=#{course.id} WHERE id=#{id_};
+    </update>
+
+</mapper>
