@@ -41,7 +41,6 @@ public class CourseController {
         model.addAttribute("grades",course);
         model.addAttribute("fails",Fail);
         model.addAttribute("average",ft.format(Average));
-
         return "forward:main.jsp";
     }
 
@@ -53,6 +52,7 @@ public class CourseController {
         float Average,sum=0;
         List<Course> list;
         User user =(User) session.getAttribute("User_Login");
+        System.out.println(1);
         if (user.getIdentity().equals("admin")){
             list = service.getAdCourse();
         }else {

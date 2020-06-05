@@ -21,7 +21,8 @@
       <div class="login-box">
         <form class="login-form" action="/login.do" method="post">
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>登录</h3>
-          <font color="red">${msg}</font>
+          <font color="red">${Login_Info}</font>
+
           <div class="form-group">
             <label class="control-label">USERNAME</label>
             <input class="form-control" type="text" placeholder="账户" name="username" autofocus>

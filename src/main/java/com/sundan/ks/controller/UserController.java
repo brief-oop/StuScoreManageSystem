@@ -18,7 +18,7 @@ public class UserController {
     private UserService service;
 
     @RequestMapping("/login")
-    public String login(String username, String password, HttpSession session, Model model, HttpServletRequest request){
+    public String login(String username, String password, HttpSession session, HttpServletRequest request){
         User user1 = new User();
         user1.setUsername(username);
         user1.setPassword(password);
@@ -33,7 +33,7 @@ public class UserController {
                 return "redirect:/page/th_list.do";
             }
         }else {
-            model.addAttribute("msg","账户名或密码错误！");
+            session.setAttribute("Login_Info","账户名或密码错误！");
             return "forward:login.jsp";
         }
     }
@@ -115,4 +115,20 @@ public class UserController {
             return "forward:/page/getListInfo_T.do";
         }
     }
+
+    @RequestMapping("/page/addUser")
+    public String addUser(Integer id,String username,String password,String identity,String class_){
+        User user = new User();
+        user.setId(id);
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setIdentity(identity);
+        user.setClass_(class_);
+        service.addUser(user);
+        if (identity.equals("student")){
+            service.addUser_S(id);
+        }
+        return "addUser";
+    }
+
 }

@@ -86,6 +86,7 @@
         <li><a class="app-menu__item active" href="th_list.do"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">成绩管理</span></a></li>
         <li><a class="app-menu__item" href="getListInfo_S.do"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">学生管理</span></a></li>
         <li><a class="app-menu__item" href="getListInfo_T.do"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">教师管理</span></a></li>
+        <li><a class="app-menu__item" href="addUser.jsp"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">添加用户</span></a></li>
         <li><a class="app-menu__item" href="/logout.do"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">退出系统</span></a></li>
     </ul>
 </aside>

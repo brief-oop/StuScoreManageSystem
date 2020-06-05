@@ -24,11 +24,15 @@
     </select>
 
     <insert id="saveCourse">
-        INSERT INTO course(id,name,math,english,computer) VALUES(#{id},#{name},#{math},#{english},#{computer})
+        INSERT INTO course(id,name,math,english,computer) VALUES(#{id},#{name},#{math},#{english},#{computer});
+        INSERT INTO information(id) VALUES(#{id});
+        INSERT INTO user(id,identity) VALUES(#{id},"student");
     </insert>
 
     <delete id="deleteCourse">
-        DELETE FROM course WHERE id=#{id}
+        DELETE FROM course WHERE id=#{id};
+        DELETE FROM user WHERE id=#{id};
+        DELETE FROM information WHERE id=#{id};
     </delete>
 
     <update id="editCourse">

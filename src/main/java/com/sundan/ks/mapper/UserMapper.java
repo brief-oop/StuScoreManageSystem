@@ -13,4 +13,6 @@ public interface UserMapper {
     List<User> getItem(String identity);
     int editUser(@Param("user") User user,@Param("id_") Integer id_);
     int saveS_U(Integer id);
+    int addUser(User user);
+    int addUser_S(Integer id);
 }

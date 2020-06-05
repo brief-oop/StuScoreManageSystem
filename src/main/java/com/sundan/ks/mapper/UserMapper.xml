@@ -19,6 +19,15 @@
         INSERT INTO USER(username,password,identity) VALUES(#{username},#{password},"student");
     </insert>
 
+    <insert id="addUser" >
+        INSERT INTO USER(id,username,password,identity,class_) VALUES(#{id},#{username},#{password},#{identity},#{class_});
+        INSERT INTO information(id) VALUES (#{id});
+    </insert>
+
+    <insert id="addUser_S">
+        INSERT INTO course(id,math,english,computer) VALUES(#{id},0,0,0);
+    </insert>
+
     <insert id="saveS_U">
         INSERT INTO information(id) VALUES(#{id});
         INSERT INTO course(id,math,english,computer) VALUES(#{id},0,0,0);

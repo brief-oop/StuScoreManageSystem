@@ -12,4 +12,6 @@ public interface UserService {
     List<User> getItem(String identity);
     int editUser(User user,Integer id_);
     int saveS_U(Integer id);
+    int addUser(User user);
+    int addUser_S(Integer id);
 }

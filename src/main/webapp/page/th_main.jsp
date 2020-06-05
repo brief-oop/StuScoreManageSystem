@@ -133,34 +133,23 @@
         </div>
         <div class="col-md-6">
             <div class="tile">
-                <h3 class="tile-title">Simple Table</h3>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                    </tr>
-                    </thead>
+                <h3 class="tile-title">友情链接</h3>
+                <table>
                     <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>工大官网</td>
+                        <td><a href="http://www.hut.edu.cn/" target="_blank">进入</a></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>工大教务处</td>
+                        <td><a href="http://jwc.hut.edu.cn/" target="_blank">进入</a></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <td>工大教务管理系统</td>
+                        <td><a href="http://218.75.197.123:83/" target="_blank">进入</a></td>
                     </tr>
                     </tbody>
                 </table>

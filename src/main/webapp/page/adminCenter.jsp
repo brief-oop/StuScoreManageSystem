@@ -94,6 +94,7 @@ To change this template use File | Settings | File Templates.
     <li><a class="app-menu__item" href="th_list.do"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">成绩管理</span></a></li>
     <li><a class="app-menu__item active" href="getListInfo_S.do"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">学生管理</span></a></li>
     <li><a class="app-menu__item" href="getListInfo_T.do"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">教师管理</span></a></li>
+    <li><a class="app-menu__item" href="addUser.jsp"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">添加用户</span></a></li>
     <li><a class="app-menu__item" href="/login.jsp"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">退出系统</span></a></li>
   </ul>
 </aside>
@@ -105,7 +106,7 @@ To change this template use File | Settings | File Templates.
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="th_list.do">stu manager</a></li>
+      <li class="breadcrumb-item"><a href="th_list.do">grade manager</a></li>
     </ul>
   </div>
   <div class="row">

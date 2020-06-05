@@ -42,4 +42,12 @@ public class UserServiceImpl implements UserService {
         return mapper.saveS_U(id);
     }
 
+    public int addUser(User user) {
+        return mapper.addUser(user);
+    }
+
+    public int addUser_S(Integer id) {
+        return mapper.addUser_S(id);
+    }
+
 }
