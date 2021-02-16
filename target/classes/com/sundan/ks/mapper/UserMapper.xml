@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sundan.ks.mapper.UserMapper">
+
+    <resultMap id="userResultMap" type="com.sundan.ks.bean.User">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="identity" property="identity"></result>
+    </resultMap>
+
+    <select id="getUser" resultMap="userResultMap">
+         SELECT * FROM user WHERE username=#{username} AND password=#{password}
+    </select>
+    
+    <insert id="saveUser" useGeneratedKeys="true" keyProperty="id" >
+        INSERT INTO USER(username,password,identity) VALUES(#{username},#{password},"student");
+    </insert>
+
+    <insert id="addUser" >
+        INSERT INTO USER(id,username,password,identity,class_) VALUES(#{id},#{username},#{password},#{identity},#{class_});
+        INSERT INTO information(id) VALUES (#{id});
+    </insert>
+
+    <insert id="addUser_S">
+        INSERT INTO course(id,math,english,computer) VALUES(#{id},0,0,0);
+    </insert>
+
+    <insert id="saveS_U">
+        INSERT INTO information(id) VALUES(#{id});
+        INSERT INTO course(id,math,english,computer) VALUES(#{id},0,0,0);
+    </insert>
+
+    <update id="updateUser">
+        UPDATE user SET password=#{password} WHERE id=#{id}
+    </update>
+
+    <select id="getItem" resultMap="userResultMap">
+        SELECT * FROM user WHERE identity=#{identity}
+    </select>
+
+    <delete id="deleteUser">
+        DELETE FROM USER WHERE id=#{id}
+    </delete>
+
+    <update id="editUser">
+        UPDATE user SET id=#{user.id},username=#{user.username},password=#{user.password},identity=#{user.identity},class_=#{user.class_} WHERE id=#{id_};
+        UPDATE course SET id=#{user.id} WHERE id=#{id_};
+        UPDATE information SET id=#{user.id} WHERE id=#{id_};
+    </update>
+    
+</mapper>

@@ -40,6 +40,12 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.0.0.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
       <version>5.0.0.RELEASE</version>
     </dependency>
@@ -50,12 +56,7 @@
       <version>4.12</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>5.0.0.RELEASE</version>
-    </dependency>
-
+    <!--与jdbc重复可不选-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>

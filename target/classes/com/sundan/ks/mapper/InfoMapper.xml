@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sundan.ks.mapper.InfoMapper">
+
+    <resultMap id="infoResultMap" type="com.sundan.ks.bean.Info">
+        <id column="id" property="id"></id>
+        <result column="age" property="age"></result>
+        <result column="sex" property="sex"></result>
+        <result column="nation" property="nation"></result>
+        <result column="phone" property="phone"></result>
+    </resultMap>
+
+    <select id="getInfo" resultMap="infoResultMap">
+        SELECT * FROM information WHERE id=#{id}
+    </select>
+
+    <update id="updateInfo">
+        UPDATE information SET age=#{age},sex=#{sex},nation=#{nation},phone=#{phone} WHERE id=#{id}
+    </update>
+
+    <update id="manaInfo">
+        UPDATE information SET id=#{info.id},age=#{info.age},sex=#{info.sex},nation=#{info.nation},phone=#{info.phone} WHERE id=#{id_};
+        UPDATE user SET id=#{info.id} WHERE id=#{id_};
+        UPDATE course SET id=#{info.id} WHERE id=#{id_};
+    </update>
+
+    <select id="getListInfo" resultMap="infoResultMap">
+        SELECT * FROM information WHERE id in (SELECT id FROM `user` WHERE identity=#{identity})
+    </select>
+
+</mapper>
